@@ -5,5 +5,21 @@ collection = chroma_client.get_or_create_collection(name="project_doom_logs")
 print('Memory core online')
 
   
-  
+collection.add(
+    documents=[
+        "The arc reactor is a clean energy source.",
+        "A billionaire genius built a high-tech robotic armor.",
+        "Semantic search algorithms power modern RAG systems."
+    ],
+    metadatas=[{"category": "energy"}, {"category": "engineering"}, {"category": "ai"}],
+    ids=["log_01", "log_02", "log_03"]
+)
+
+results = collection.query(
+    query_texts=["How does the advanced combat suit get its power?"],
+    n_results=1
+)
+
+print(results['documents'])
+
   
