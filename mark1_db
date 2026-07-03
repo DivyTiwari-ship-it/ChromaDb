@@ -1,0 +1,9 @@
+import chromadb
+chroma_client = chromadb.PersistentClient(path="./mark1_db")
+collection = chroma_client.get_or_create_collection(name="project_doom_logs") 
+
+print('Memory core online')
+
+  
+  
+  
